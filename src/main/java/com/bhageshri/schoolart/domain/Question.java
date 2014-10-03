@@ -1,67 +1,123 @@
 package com.bhageshri.schoolart.domain;
 
-public class Question {
-	private String question;
-	private String answer;
-	
-	public Question() { }
-	
-	public Question(String question, String answer) {
-		this.question = question;
-		this.answer = answer;
-	}
+import com.bhageshri.schoolart.util.QuestionType;
+import java.io.Serializable;
+import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 
-	public String getQuestion() {
-		return question;
-	}
+@Entity
+@Table(name = "QUESTION")
+public class Question implements Serializable {
 
-	public void setQuestion(String question) {
-		this.question = question;
-	}
+    @Id
+    @TableGenerator(name = "questionIdGenerator", table = "ID_GENERATOR", pkColumnName = "PK_NAME", pkColumnValue = "QUESTION_ID", valueColumnName = "PK_VALUE")
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "questionIdGenerator")
+    @Column(name = "ID")
+    private Long id;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "QUESTION_TYPE")
+    private QuestionType questionType;
+    @Column(name = "QUESTION")
+    private String question;
+    @Column(name = "ANSWER")
+    private String answer;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "FK_EXERCISE_ID")
+    private Exercise exercise;
 
-	public String getAnswer() {
-		return answer;
-	}
+    public Question() {
+    }
 
-	public void setAnswer(String answer) {
-		this.answer = answer;
-	}
+    public Question(QuestionType questionType, String question, String answer) {
+        this.questionType = questionType;
+        this.question = question;
+        this.answer = answer;
+    }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((answer == null) ? 0 : answer.hashCode());
-		result = prime * result
-				+ ((question == null) ? 0 : question.hashCode());
-		return result;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Question other = (Question) obj;
-		if (answer == null) {
-			if (other.answer != null)
-				return false;
-		} else if (!answer.equals(other.answer))
-			return false;
-		if (question == null) {
-			if (other.question != null)
-				return false;
-		} else if (!question.equals(other.question))
-			return false;
-		return true;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	@Override
-	public String toString() {
-		return "Question [question=" + question + ", answer=" + answer + "]";
-	}
-	
+    public QuestionType getQuestionType() {
+        return questionType;
+    }
+
+    public void setQuestionType(QuestionType questionType) {
+        this.questionType = questionType;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+    public Exercise getExercise() {
+        return exercise;
+    }
+
+    public void setExercise(Exercise exercise) {
+        this.exercise = exercise;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 71 * hash + Objects.hashCode(this.id);
+        hash = 71 * hash + Objects.hashCode(this.questionType);
+        hash = 71 * hash + Objects.hashCode(this.question);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Question other = (Question) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.questionType, other.questionType)) {
+            return false;
+        }
+        if (!Objects.equals(this.question, other.question)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Question{" + "id=" + id + ", questionType=" + questionType + ", question=" + question + ", answer=" + answer + ", exercise=" + exercise + '}';
+    }
 }

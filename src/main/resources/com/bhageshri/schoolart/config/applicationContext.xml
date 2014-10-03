@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+    
+    <context:annotation-config />
+    <context:component-scan base-package="com.bhageshri.schoolart" />
+    
+    <bean id="entityManagerFactory"
+    	class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+    	<property name="persistenceUnitName" value="schoolart-PU" />
+        <property name="jpaDialect">
+            <bean class="org.springframework.orm.jpa.vendor.EclipseLinkJpaDialect" />
+        </property>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter" />
+        </property>
+    </bean>
+
+    <bean id="exerciseService" class="com.bhageshri.schoolart.service.impl.ExerciseServiceImpl" />
+    
+    <bean id="questionService" class="com.bhageshri.schoolart.service.impl.QuestionServiceImpl" />
+    
+    <bean id="exerciseDAO" class="com.bhageshri.schoolart.dao.impl.ExerciseDAOImpl" />
+    
+    <bean id="questionDAO" class="com.bhageshri.schoolart.dao.impl.QuestionDAOImpl" />
+
+    <bean  id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    	<property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+	
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+
+    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+    
+    <tx:annotation-driven transaction-manager="transactionManager" />
+</beans>
