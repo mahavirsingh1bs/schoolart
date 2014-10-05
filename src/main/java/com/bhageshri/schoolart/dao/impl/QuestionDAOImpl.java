@@ -40,5 +40,12 @@ public class QuestionDAOImpl extends GenericDAOImpl<Long, Question> implements Q
         query.setParameter("exerciseId", id);
         return (List<Question>) query.getResultList();
     }
-    
+
+    @Override
+    public List<Question> findQuestionByTypeAndSubject(QuestionType type, Long subjectId) {
+        Query query = entityManager.createQuery("SELECT q FROM Question q WHERE q.questionType = :type AND q.exercise.subject.id = :subjectId");
+        query.setParameter("type", type);
+        query.setParameter("subjectId", subjectId);
+        return query.getResultList();
+    }
 }

@@ -1,34 +1,148 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <dataset>
+        
+        <SCHOOL ID="1" NAME="Ryan International School" STREET="NH-24, Near Golf Link" CITY="Ghaziabad" ZIPCODE="201301" AFFILIATION="CBSE" />
+        <SCHOOL ID="2" NAME="Genesis International School" STREET="Yamnuna Express Way, Near NTT" CITY="Noida" ZIPCODE="201305" AFFILIATION="CBSE" />
+        <SCHOOL ID="3" NAME="Kothari International School" STREET="Sector-51, Near Market" CITY="Noida" ZIPCODE="201301" AFFILIATION="CBSE" />
+        <SCHOOL ID="4" NAME="New Green Lawns School" STREET="Dadri Road, Bhangel" CITY="Noida" ZIPCODE="201305" AFFILIATION="UGC" /> 
+        
+        <TEACHER ID="1" FIRST_NAME="Bhawna" LAST_NAME="Sharma" STREET="H.No. 82, Sector-51" CITY="Noida" ZIPCODE="201305" SCHOOL_ID="1" />
+        <TEACHER ID="2" FIRST_NAME="Ryan" LAST_NAME="Smith" STREET="H.No.48, Sector-48" CITY="Noida" ZIPCODE="201305" SCHOOL_ID="1" />
+        <TEACHER ID="3" FIRST_NAME="James" LAST_NAME="Roles" STREET="H.No. 82, Sector-51" CITY="Noida" ZIPCODE="201305" SCHOOL_ID="1" />
+        <TEACHER ID="4" FIRST_NAME="Peter" LAST_NAME="Katt" STREET="H.No. 82, Sector-51" CITY="Noida" ZIPCODE="201305" SCHOOL_ID="1" />
+        <TEACHER ID="5" FIRST_NAME="Jones" LAST_NAME="Rebecca" STREET="H.No. 82, Sector-51" CITY="Noida" ZIPCODE="201305" SCHOOL_ID="1" />
     
-        <EXERCISE ID="1" NAME="EXERCISE-1" />
-        <EXERCISE ID="2" NAME="EXERCISE-2" />
-        <EXERCISE ID="3" NAME="EXERCISE-3" />
-        <EXERCISE ID="4" NAME="EXERCISE-4" />
+        <EDUCATION ID="1" NAME="M.C.A." COLLEGE="IPEM, Gzb" TYPE="POST_GRADUATE" EDU_YEAR="2010" PERCENT="78" FK_TEACHER_ID="1" SCHOOL_ID="1"/>
+        <EDUCATION ID="2" NAME="M.C.A." COLLEGE="IPEM, Gzb" TYPE="POST_GRADUATE" EDU_YEAR="2010" PERCENT="78" FK_TEACHER_ID="2" SCHOOL_ID="1"/>
+        <EDUCATION ID="3" NAME="M.C.A." COLLEGE="IPEM, Gzb" TYPE="POST_GRADUATE" EDU_YEAR="2010" PERCENT="78" FK_TEACHER_ID="3" SCHOOL_ID="1"/>
+        <EDUCATION ID="4" NAME="M.C.A." COLLEGE="IPEM, Gzb" TYPE="POST_GRADUATE" EDU_YEAR="2010" PERCENT="78" FK_TEACHER_ID="4" SCHOOL_ID="1"/>
+        <EDUCATION ID="5" NAME="M.C.A." COLLEGE="IPEM, Gzb" TYPE="POST_GRADUATE" EDU_YEAR="2010" PERCENT="78" FK_TEACHER_ID="5" SCHOOL_ID="1"/>
         
-        <QUESTION ID="1" QUESTION="What tells us about past?" ANSWER="History" FK_EXERCISE_ID="1" QUESTION_TYPE="VERY_SHORT" />
-        <QUESTION ID="2" QUESTION="Very Short Question2?" ANSWER="Very Short Answer2" FK_EXERCISE_ID="1" QUESTION_TYPE="VERY_SHORT" />
-        <QUESTION ID="3" QUESTION="Very Short Question3?" ANSWER="Very Short Answer3" FK_EXERCISE_ID="1" QUESTION_TYPE="VERY_SHORT" />
-        <QUESTION ID="4" QUESTION="Very Short Question4?" ANSWER="Very Short Answer4" FK_EXERCISE_ID="1" QUESTION_TYPE="VERY_SHORT" />
-        <QUESTION ID="5" QUESTION="Very Short Question5?" ANSWER="Very Short Answer5" FK_EXERCISE_ID="1" QUESTION_TYPE="VERY_SHORT" />
+        <STU_CLASS ID="1" NAME="Class III" SCHOOL_ID="4"/>
+        <STU_CLASS ID="2" NAME="Class IV" SCHOOL_ID="4"/>
+        <STU_CLASS ID="3" NAME="Class V" SCHOOL_ID="4"/>
+        <STU_CLASS ID="4" NAME="Class VI" SCHOOL_ID="4"/>
+        <STU_CLASS ID="5" NAME="Class VII" SCHOOL_ID="4"/>
+    
+        <STUDENT ID="1" FIRST_NAME="Akash" LAST_NAME="Singh" FATHER_NAME="Ramvir Singh" MOTHER_NAME="Gayatri Devi" ROLL_NO="1" FK_STU_CLASS_ID="4" ENROLLMENT_NO="2014VISC1" SCHOOL_ID="4"/>
+        <STUDENT ID="2" FIRST_NAME="Ajay" LAST_NAME="Singh" FATHER_NAME="Ramvir Singh" MOTHER_NAME="Gayatri Devi" ROLL_NO="1" FK_STU_CLASS_ID="4" ENROLLMENT_NO="2014ISC1" SCHOOL_ID="4"/>
+        <STUDENT ID="3" FIRST_NAME="Ansh" LAST_NAME="Singh" FATHER_NAME="Mahavir Singh" MOTHER_NAME="Bhageshri Singh" ROLL_NO="1" FK_STU_CLASS_ID="1" ENROLLMENT_NO="2014IISC1" SCHOOL_ID="4"/>
+        <STUDENT ID="4" FIRST_NAME="Mahie" LAST_NAME="Singh" FATHER_NAME="Mahavir Singh" MOTHER_NAME="Bhageshri Singh" ROLL_NO="1" FK_STU_CLASS_ID="1" ENROLLMENT_NO="2014IISC1" SCHOOL_ID="4"/>
+        <STUDENT ID="5" FIRST_NAME="Sidhant" LAST_NAME="Singh" FATHER_NAME="Shyamvir Singh" MOTHER_NAME="Usha Singh" ROLL_NO="1" FK_STU_CLASS_ID="1" ENROLLMENT_NO="2014ISC1" SCHOOL_ID="4"/>
+       
+        <ROLE_DETAIL ID="1" NAME="Admin" SCHOOL_ID="1"/>
+        <ROLE_DETAIL ID="2" NAME="Principal" SCHOOL_ID="1"/>
+        <ROLE_DETAIL ID="3" NAME="Teacher" SCHOOL_ID="1"/>
+        <ROLE_DETAIL ID="4" NAME="Student" SCHOOL_ID="1"/>
         
-        <QUESTION ID="6" QUESTION="Short Question1?" ANSWER="Short Answer1" FK_EXERCISE_ID="1" QUESTION_TYPE="SHORT" />
-        <QUESTION ID="7" QUESTION="Short Question2?" ANSWER="Short Answer2" FK_EXERCISE_ID="1" QUESTION_TYPE="SHORT" />
-        <QUESTION ID="8" QUESTION="Short Question3?" ANSWER="Short Answer3" FK_EXERCISE_ID="1" QUESTION_TYPE="SHORT" />
-        <QUESTION ID="9" QUESTION="Short Question4?" ANSWER="Short Answer4" FK_EXERCISE_ID="1" QUESTION_TYPE="SHORT" />
-        <QUESTION ID="10" QUESTION="Short Question5?" ANSWER="Short Answer5" FK_EXERCISE_ID="1" QUESTION_TYPE="SHORT" />
+        <USER_DETAIL ID="1" USERNAME="TC1" PASSWORD="school@123" SCHOOL_ID="1"/>
+        <USER_DETAIL ID="2" USERNAME="TC2" PASSWORD="school@123" SCHOOL_ID="1"/>
+        <USER_DETAIL ID="3" USERNAME="TC3" PASSWORD="school@123" SCHOOL_ID="1"/>
+        <USER_DETAIL ID="4" USERNAME="ST61" PASSWORD="school@123" SCHOOL_ID="4"/>
+        <USER_DETAIL ID="5" USERNAME="ST62" PASSWORD="school@123" SCHOOL_ID="4"/>
+        <USER_DETAIL ID="6" USERNAME="ST63" PASSWORD="school@123" SCHOOL_ID="4"/>
         
-        <QUESTION ID="11" QUESTION="What tells us about past?" ANSWER="History" FK_EXERCISE_ID="2" QUESTION_TYPE="VERY_SHORT" />
-        <QUESTION ID="12" QUESTION="Very Short Question2?" ANSWER="Very Short Answer2" FK_EXERCISE_ID="2" QUESTION_TYPE="VERY_SHORT" />
-        <QUESTION ID="13" QUESTION="Very Short Question3?" ANSWER="Very Short Answer3" FK_EXERCISE_ID="2" QUESTION_TYPE="VERY_SHORT" />
-        <QUESTION ID="14" QUESTION="Very Short Question4?" ANSWER="Very Short Answer4" FK_EXERCISE_ID="2" QUESTION_TYPE="VERY_SHORT" />
-        <QUESTION ID="15" QUESTION="Very Short Question5?" ANSWER="Very Short Answer5" FK_EXERCISE_ID="2" QUESTION_TYPE="VERY_SHORT" />
+        <USER_ROLE FK_USER_ID="1" FK_ROLE_ID="2" />
+        <USER_ROLE FK_USER_ID="1" FK_ROLE_ID="3" />
+        <USER_ROLE FK_USER_ID="2" FK_ROLE_ID="3" />
+        <USER_ROLE FK_USER_ID="3" FK_ROLE_ID="3" />
         
-        <QUESTION ID="16" QUESTION="Short Question1?" ANSWER="Short Answer1" FK_EXERCISE_ID="2" QUESTION_TYPE="SHORT" />
-        <QUESTION ID="17" QUESTION="Short Question2?" ANSWER="Short Answer2" FK_EXERCISE_ID="2" QUESTION_TYPE="SHORT" />
-        <QUESTION ID="18" QUESTION="Short Question3?" ANSWER="Short Answer3" FK_EXERCISE_ID="2" QUESTION_TYPE="SHORT" />
-        <QUESTION ID="19" QUESTION="Short Question4?" ANSWER="Short Answer4" FK_EXERCISE_ID="2" QUESTION_TYPE="SHORT" />
-        <QUESTION ID="20" QUESTION="Short Question5?" ANSWER="Short Answer5" FK_EXERCISE_ID="2" QUESTION_TYPE="SHORT" />
+        <SUBJECT ID="1" NAME="Mathematics" FK_STU_CLASS_ID="1" SCHOOL_ID="4"/>
+        <SUBJECT ID="2" NAME="Science" FK_STU_CLASS_ID="1" SCHOOL_ID="4"/>
+        <SUBJECT ID="3" NAME="Social Science" FK_STU_CLASS_ID="1" SCHOOL_ID="4"/>
+        <SUBJECT ID="4" NAME="General Knowledge" FK_STU_CLASS_ID="1" SCHOOL_ID="4"/>
+        <SUBJECT ID="5" NAME="Sanskrit" FK_STU_CLASS_ID="1" SCHOOL_ID="4"/>
+        
+        <EXERCISE ID="1" NAME="EXERCISE-1" FK_SUBJECT_ID="1" SCHOOL_ID="4"/>
+        <EXERCISE ID="2" NAME="EXERCISE-2" FK_SUBJECT_ID="1" SCHOOL_ID="4"/>
+        <EXERCISE ID="3" NAME="EXERCISE-3" FK_SUBJECT_ID="1" SCHOOL_ID="4"/>
+        <EXERCISE ID="4" NAME="EXERCISE-4" FK_SUBJECT_ID="1" SCHOOL_ID="4"/>
+        <EXERCISE ID="5" NAME="EXERCISE-5" FK_SUBJECT_ID="1" SCHOOL_ID="4"/>
+        
+        <EXERCISE ID="6" NAME="EXERCISE 1" FK_SUBJECT_ID="2" SCHOOL_ID="4"/>
+        <EXERCISE ID="7" NAME="EXERCISE 2" FK_SUBJECT_ID="2" SCHOOL_ID="4"/>
+        <EXERCISE ID="8" NAME="EXERCISE 3" FK_SUBJECT_ID="2" SCHOOL_ID="4"/>
+        <EXERCISE ID="9" NAME="EXERCISE 4" FK_SUBJECT_ID="2" SCHOOL_ID="4"/>
+        <EXERCISE ID="10" NAME="EXERCISE 5" FK_SUBJECT_ID="2" SCHOOL_ID="4"/>
+        
+        <QUESTION ID="1" QUESTION="What helps us to know our past?" ANSWER="History" FK_EXERCISE_ID="1" QUESTION_TYPE="VERY_SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="2" QUESTION="For which period are no records available?" ANSWER="Prehistory" FK_EXERCISE_ID="1" QUESTION_TYPE="VERY_SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="3" QUESTION="What is the full form of AD?" ANSWER="Anno Domini" FK_EXERCISE_ID="1" QUESTION_TYPE="VERY_SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="4" QUESTION="Which book tells us the exploits of Prithviraj Chauhan?" ANSWER="Prithviraj Raso" FK_EXERCISE_ID="1" QUESTION_TYPE="VERY_SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="5" QUESTION="Name any one Chinese traveller who visited India during the ancient period" ANSWER="Fahein" FK_EXERCISE_ID="1" QUESTION_TYPE="VERY_SHORT" SCHOOL_ID="4"/>
+        
+        <QUESTION ID="6" QUESTION="What does history study?" ANSWER="History study tells us that how man lived in the past, what problems he faced to survive and how he solved them." FK_EXERCISE_ID="1" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="7" QUESTION="What are the two types of timeframes of ancient history?" ANSWER="Short Answer2" FK_EXERCISE_ID="1" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="8" QUESTION="What is the difference between BC and AD?" ANSWER="Short Answer3" FK_EXERCISE_ID="1" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="9" QUESTION="How have the travellers helped us to know our ancient history?" ANSWER="Short Answer4" FK_EXERCISE_ID="1" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="10" QUESTION="What are the important archaeological sources?" ANSWER="Short Answer5" FK_EXERCISE_ID="1" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        
+        <QUESTION ID="11" QUESTION="What tells us about past?" ANSWER="History" FK_EXERCISE_ID="2" QUESTION_TYPE="VERY_SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="12" QUESTION="Very Short Question2?" ANSWER="Very Short Answer2" FK_EXERCISE_ID="2" QUESTION_TYPE="VERY_SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="13" QUESTION="Very Short Question3?" ANSWER="Very Short Answer3" FK_EXERCISE_ID="2" QUESTION_TYPE="VERY_SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="14" QUESTION="Very Short Question4?" ANSWER="Very Short Answer4" FK_EXERCISE_ID="2" QUESTION_TYPE="VERY_SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="15" QUESTION="Very Short Question5?" ANSWER="Very Short Answer5" FK_EXERCISE_ID="2" QUESTION_TYPE="VERY_SHORT" SCHOOL_ID="4"/>
+        
+        <QUESTION ID="16" QUESTION="Short Question1?" ANSWER="Short Answer1" FK_EXERCISE_ID="2" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="17" QUESTION="Short Question2?" ANSWER="Short Answer2" FK_EXERCISE_ID="2" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="18" QUESTION="Short Question3?" ANSWER="Short Answer3" FK_EXERCISE_ID="2" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="19" QUESTION="Short Question4?" ANSWER="Short Answer4" FK_EXERCISE_ID="2" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="20" QUESTION="Short Question5?" ANSWER="Short Answer5" FK_EXERCISE_ID="2" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        
+        <QUESTION ID="21" QUESTION="What is food?" ANSWER="" FK_EXERCISE_ID="6" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="22" QUESTION="Give two example of leaves used as food by human?" ANSWER="Short Answer2" FK_EXERCISE_ID="6" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="23" QUESTION="Which part of plant is wheat and rice?" ANSWER="Short Answer3" FK_EXERCISE_ID="6" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="24" QUESTION="What is herbivores?" ANSWER="Short Answer4" FK_EXERCISE_ID="6" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="25" QUESTION="Which gas observed by the plants in photosynthesis?" ANSWER="Short Answer5" FK_EXERCISE_ID="6" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="26" QUESTION="Write the categories of living organisms food habits." ANSWER="Short Answer5" FK_EXERCISE_ID="6" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        
+        <QUESTION ID="27" QUESTION="Cornivores eat ______________ of other animals." ANSWER="Flesh" FK_EXERCISE_ID="6" QUESTION_TYPE="FILL_IN_THE_BLANK" SCHOOL_ID="4"/>
+        <QUESTION ID="28" QUESTION="Herbivores are _____________ animals." ANSWER="eaten by" FK_EXERCISE_ID="6" QUESTION_TYPE="FILL_IN_THE_BLANK" SCHOOL_ID="4"/>
+        <QUESTION ID="29" QUESTION="Omnivores eat both ____________ and animals." ANSWER="plants" FK_EXERCISE_ID="6" QUESTION_TYPE="FILL_IN_THE_BLANK" SCHOOL_ID="4"/>
+        <QUESTION ID="30" QUESTION="The leaves of tomato plants are ____________." ANSWER="poisonous" FK_EXERCISE_ID="6" QUESTION_TYPE="FILL_IN_THE_BLANK" SCHOOL_ID="4"/>
+        <QUESTION ID="31" QUESTION="Pulses are such source of _____________." ANSWER="" FK_EXERCISE_ID="6" QUESTION_TYPE="FILL_IN_THE_BLANK" SCHOOL_ID="4"/>
+        <QUESTION ID="32" QUESTION="Plants release ____________ in photosynthesis." ANSWER="oxygen" FK_EXERCISE_ID="6" QUESTION_TYPE="FILL_IN_THE_BLANK" SCHOOL_ID="4"/>
+        <QUESTION ID="33" QUESTION="Cabbage is the ____________ part of a plant." ANSWER="leaves" FK_EXERCISE_ID="6" QUESTION_TYPE="FILL_IN_THE_BLANK" SCHOOL_ID="4"/>
+        <QUESTION ID="34" QUESTION="The regular use of fish oil reduces ______________ and prevent from _____________ diseases." ANSWER="asthma,heart" FK_EXERCISE_ID="6" QUESTION_TYPE="FILL_IN_THE_BLANK" SCHOOL_ID="4"/>
+        
+        <QUESTION ID="35" QUESTION="Bear,human being" ANSWER="Omnivores" FK_EXERCISE_ID="6" QUESTION_TYPE="MATCH" SCHOOL_ID="4"/> 
+        <QUESTION ID="36" QUESTION="Girrafe and deer" ANSWER="Herbivores" FK_EXERCISE_ID="6" QUESTION_TYPE="MATCH" SCHOOL_ID="4"/> 
+        <QUESTION ID="37" QUESTION="Mushroom and yeast" ANSWER="Saprophytes" FK_EXERCISE_ID="6" QUESTION_TYPE="MATCH" SCHOOL_ID="4"/> 
+        <QUESTION ID="38" QUESTION="Round worm and head lice" ANSWER="Parasites" FK_EXERCISE_ID="6" QUESTION_TYPE="MATCH" SCHOOL_ID="4"/> 
+        <QUESTION ID="39" QUESTION="Producer" ANSWER="Makes their own food" FK_EXERCISE_ID="6" QUESTION_TYPE="MATCH" SCHOOL_ID="4"/> 
+        
+        <QUESTION ID="40" QUESTION="Which nutrient is the richest source of energy and why?" ANSWER="" FK_EXERCISE_ID="7" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="41" QUESTION="Write two sources of plant fats and two source of animal fats." ANSWER="" FK_EXERCISE_ID="7" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="42" QUESTION="What is malnutrition?" ANSWER="" FK_EXERCISE_ID="7" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="43" QUESTION="List the functions of water in our body?" ANSWER="" FK_EXERCISE_ID="7" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="44" QUESTION="List the symptoms of a person suffering from the deficiency of carbohydrates?" ANSWER="" FK_EXERCISE_ID="7" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="45" QUESTION="What are deficiency diseases?" ANSWER="" FK_EXERCISE_ID="7" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="46" QUESTION="What are the symptoms of goitre?" ANSWER="" FK_EXERCISE_ID="7" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="47" QUESTION="Which vitamin is present in leafy vegetables?" ANSWER="" FK_EXERCISE_ID="7" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        
+        <QUESTION ID="48" QUESTION="Energy giving foods are ____________ and ____________." ANSWER="" FK_EXERCISE_ID="7" QUESTION_TYPE="FILL_IN_THE_BLANK" SCHOOL_ID="4"/>
+        <QUESTION ID="49" QUESTION="Lack of __________________ can cause rickets." ANSWER="" FK_EXERCISE_ID="7" QUESTION_TYPE="FILL_IN_THE_BLANK" SCHOOL_ID="4"/>
+        <QUESTION ID="50" QUESTION="The deficiency of vitamin C causes _________________." ANSWER="" FK_EXERCISE_ID="7" QUESTION_TYPE="FILL_IN_THE_BLANK" SCHOOL_ID="4"/>
+        <QUESTION ID="51" QUESTION="Deficiency of _______________ causes of disease known as rickets." ANSWER="" FK_EXERCISE_ID="7" QUESTION_TYPE="FILL_IN_THE_BLANK" SCHOOL_ID="4"/>
+        <QUESTION ID="52" QUESTION="Kwashiorkor is caused due to deficiency of _______________." ANSWER="" FK_EXERCISE_ID="7" QUESTION_TYPE="FILL_IN_THE_BLANK" SCHOOL_ID="4"/>
+        <QUESTION ID="53" QUESTION="_______________ is used for testing the presence of starch in a food items." ANSWER="" FK_EXERCISE_ID="7" QUESTION_TYPE="FILL_IN_THE_BLANK" SCHOOL_ID="4"/>
+        <QUESTION ID="54" QUESTION="Water deficiency in our body causes _____________." ANSWER="" FK_EXERCISE_ID="7" QUESTION_TYPE="FILL_IN_THE_BLANK" SCHOOL_ID="4"/>
+        <QUESTION ID="55" QUESTION="Dehydration can  be  treatedby  giving ______________." ANSWER="" FK_EXERCISE_ID="7" QUESTION_TYPE="FILL_IN_THE_BLANK" SCHOOL_ID="4"/>
+        
+        <QUESTION ID="56" QUESTION="Vitamin A" ANSWER="Night blindness" FK_EXERCISE_ID="7" QUESTION_TYPE="MATCH" SCHOOL_ID="4"/> 
+        <QUESTION ID="57" QUESTION="Goitre " ANSWER="Iodine" FK_EXERCISE_ID="7" QUESTION_TYPE="MATCH" SCHOOL_ID="4"/> 
+        <QUESTION ID="58" QUESTION="Calcium" ANSWER="Rickets" FK_EXERCISE_ID="7" QUESTION_TYPE="MATCH" SCHOOL_ID="4"/> 
+        <QUESTION ID="59" QUESTION="Obesity" ANSWER="Lack of Physical activity" FK_EXERCISE_ID="7" QUESTION_TYPE="MATCH" SCHOOL_ID="4"/> 
+        <QUESTION ID="60" QUESTION="ORS" ANSWER="Oral Rehydration Solution" FK_EXERCISE_ID="7" QUESTION_TYPE="MATCH" SCHOOL_ID="4"/> 
+        
+        <QUESTION ID="61" QUESTION="Why do wear clothes?" ANSWER="" FK_EXERCISE_ID="8" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="62" QUESTION="What is jute? Write its utility in our daiy life." ANSWER="" FK_EXERCISE_ID="8" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="63" QUESTION="Give example of two plant fibres and two animal fibres?" ANSWER="" FK_EXERCISE_ID="8" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="64" QUESTION="What is retting?" ANSWER="" FK_EXERCISE_ID="8" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="65" QUESTION="What is loom?" ANSWER="" FK_EXERCISE_ID="8" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="66" QUESTION="Write the names of two man-made fibres?" ANSWER="" FK_EXERCISE_ID="8" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="67" QUESTION="Name any two items made from Jute." ANSWER="" FK_EXERCISE_ID="8" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
+        <QUESTION ID="68" QUESTION="Write three characteristic features of synthetic fibres." ANSWER="" FK_EXERCISE_ID="8" QUESTION_TYPE="SHORT" SCHOOL_ID="4"/>
         
 	<!-- 
 	<TENANT_DETAILS ID="1" NAME="Impetus" PHONE_NO="0120-3454300" ADDRESS="NOIDA" EMAIL_ID="contact@impetus.co.in" USER_ID="impetus" PASSWORD="impetus123" />

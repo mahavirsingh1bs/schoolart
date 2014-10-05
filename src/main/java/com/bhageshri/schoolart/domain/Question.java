@@ -25,25 +25,36 @@ public class Question implements Serializable {
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "questionIdGenerator")
     @Column(name = "ID")
     private Long id;
+    
     @Enumerated(EnumType.STRING)
     @Column(name = "QUESTION_TYPE")
     private QuestionType questionType;
+    
     @Column(name = "QUESTION")
     private String question;
+    
+    @Column(name = "OPTIONS")
+    private String options;
+    
     @Column(name = "ANSWER")
     private String answer;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "FK_EXERCISE_ID")
     private Exercise exercise;
+    
+    @ManyToOne
+    @JoinColumn(name = "SCHOOL_ID")
+    private School school;
 
     public Question() {
     }
 
-    public Question(QuestionType questionType, String question, String answer) {
+    public Question(QuestionType questionType, String question, String answer, School school) {
         this.questionType = questionType;
         this.question = question;
         this.answer = answer;
+        this.school = school;
     }
 
     public Long getId() {

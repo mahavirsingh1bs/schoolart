@@ -9,5 +9,4 @@ package com.bhageshri.schoolart.service;
  * @author mahavir.singh
  */
 public interface ExerciseService {
-    
 }

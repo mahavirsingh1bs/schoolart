@@ -1,9 +1,7 @@
 package com.bhageshri.schoolart.domain;
 
-import com.bhageshri.schoolart.util.QuestionType;
 import java.io.Serializable;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import javax.persistence.Column;
@@ -12,6 +10,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
@@ -21,20 +21,38 @@ import javax.persistence.TableGenerator;
 public class Exercise implements Serializable {
 
     @Id
-    @TableGenerator(name = "exerciseIdGenerator", table = "ID_GENERATOR", pkColumnName = "PK_NAME", pkColumnValue = "EXERCISE_ID", valueColumnName = "PK_VALUE")
+    @TableGenerator(name = "exerciseIdGenerator", 
+            table = "ID_GENERATOR", 
+            pkColumnName = "PK_NAME", 
+            pkColumnValue = "EXERCISE_ID", 
+            valueColumnName = "PK_VALUE")
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "exerciseIdGenerator")
     @Column(name = "ID")
     private Long id;
+    
     @Column(name = "NAME")
     private String name;
+    
+    @Column(name = "CHAPTER")
+    private Integer chapter;
+    
     @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "FK_EXERCISE_ID")
     private Set<Question> questions = new HashSet();
 
-    public Exercise() {
-    }
+    @ManyToOne
+    @JoinColumn(name = "FK_SUBJECT_ID")
+    private Subject subject;
+    
+    @ManyToOne
+    @JoinColumn(name = "SCHOOL_ID")
+    private School school;
 
-    public Exercise(String name) {
+    public Exercise() { }
+
+    public Exercise(String name, School school) {
         this.name = name;
+        this.school = school;
     }
 
     public Long getId() {
@@ -57,11 +75,11 @@ public class Exercise implements Serializable {
         question.setExercise(this);
         this.questions.add(question);
     }
-    
+
     public Set<Question> getQuestions() {
         return questions;
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 7;

@@ -14,6 +14,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
@@ -25,18 +27,28 @@ import javax.persistence.TableGenerator;
 @Entity
 @Table(name = "STU_CLASS")
 public class StuClass implements Serializable {
+
     private static final long serialVersionUID = 1L;
-    
     @Id
     @TableGenerator(name = "classIdGenerator", table = "ID_GENERATOR", pkColumnName = "PK_NAME", pkColumnValue = "CLASS_ID", valueColumnName = "PK_VALUE")
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "classIdGenerator")
     private Long id;
-
     @Column(name = "NAME")
     private String name;
-    
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "stuClass")
+    @JoinColumn(name = "FK_STU_CLASS_ID")
     private Set<Subject> subjects = new HashSet<>();
+
+    @ManyToOne
+    @JoinColumn(name = "SCHOOL_ID")
+    private School school;
+    
+    public StuClass() { }
+    
+    public StuClass(String name, School school) {
+        this.name = name;
+        this.school = school;
+    }
     
     public Long getId() {
         return id;
@@ -92,5 +104,4 @@ public class StuClass implements Serializable {
     public String toString() {
         return "StuClass{" + "id=" + id + ", name=" + name + '}';
     }
-
 }

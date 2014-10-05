@@ -2,10 +2,18 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="schoolart-PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.bhageshri.schoolart.domain.School</class>
+    <class>com.bhageshri.schoolart.domain.Teacher</class>
+    <class>com.bhageshri.schoolart.domain.Education</class>
+    <class>com.bhageshri.schoolart.domain.Student</class>
     <class>com.bhageshri.schoolart.domain.Exercise</class>
     <class>com.bhageshri.schoolart.domain.Question</class>
     <class>com.bhageshri.schoolart.domain.Subject</class>
     <class>com.bhageshri.schoolart.domain.StuClass</class>
+    <class>com.bhageshri.schoolart.domain.User</class>
+    <class>com.bhageshri.schoolart.domain.Role</class>
+    <class>com.bhageshri.schoolart.domain.Permission</class>
+    <class>com.bhageshri.schoolart.domain.Exam</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/schoolart?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.password" value="root"/>

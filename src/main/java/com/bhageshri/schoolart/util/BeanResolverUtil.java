@@ -12,10 +12,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author mahavir.singh
  */
 public class BeanResolverUtil {
-    
-    private static final ApplicationContext context = 
+
+    private static final ApplicationContext context =
             new ClassPathXmlApplicationContext("classpath:/com/bhageshri/schoolart/config/applicationContext.xml");
-    
+
     public static Object getBean(String beanName) {
         return context.getBean(beanName);
     }

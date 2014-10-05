@@ -27,10 +27,14 @@
     
     <bean id="questionService" class="com.bhageshri.schoolart.service.impl.QuestionServiceImpl" />
     
+    <bean id="stuClassDAO" class="com.bhageshri.schoolart.dao.impl.StuClassDAOImpl" />
+    
+    <bean id="subjectDAO" class="com.bhageshri.schoolart.dao.impl.SubjectDAOImpl" />
+    
     <bean id="exerciseDAO" class="com.bhageshri.schoolart.dao.impl.ExerciseDAOImpl" />
     
     <bean id="questionDAO" class="com.bhageshri.schoolart.dao.impl.QuestionDAOImpl" />
-
+    
     <bean  id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
     	<property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>

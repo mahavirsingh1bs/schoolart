@@ -29,6 +29,6 @@ public interface GenericDAO<ID extends Serializable, T> {
      * @return
      */
     T find(ID id) throws DAOException;
-    
+
     List<T> findAll() throws DAOException;
 }

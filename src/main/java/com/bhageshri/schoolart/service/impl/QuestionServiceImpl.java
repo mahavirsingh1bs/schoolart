@@ -11,5 +11,4 @@ import com.bhageshri.schoolart.service.QuestionService;
  * @author mahavir.singh
  */
 public class QuestionServiceImpl implements QuestionService {
-    
 }
